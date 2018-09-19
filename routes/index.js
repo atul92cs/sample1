@@ -1,0 +1,21 @@
+exports.register=function(req,res)
+{
+   res.render('register');
+};
+
+exports.login=function(req,res)
+{
+    res.render('login');
+};
+exports.home=function(req,res)
+{
+    res.render('home');
+};
+exports.careers=function(req,res)
+{
+   res.render('career');
+};
+exports.contact=function(req,res)
+{
+    res.render('contact');
+};
