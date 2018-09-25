@@ -65,4 +65,7 @@ passport.use(new localStrategy(function(username,password,done){
 
 		})
 }))
+router.post('/login',passport.authenticate('local',{successRedirect:'/success',failureRedirect: '/login',failureFlash: false}),function(req,res){
+	res.send('login successful');
+});
 module.exports=router;

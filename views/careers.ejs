@@ -1,0 +1,129 @@
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+    	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+	<link rel="stylesheet" href="/css/style.css">
+	
+    <title>Company Name</title>
+  </head>
+  
+   <body>
+    <section id="navigation">
+	    <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark ">
+    <div class="container"> 
+ <a class="navbar-brand" href="#">Company Name </a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarText">
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="/">Home </a>
+      </li>
+     
+	  <li class="nav-item">
+	    <a class="nav-link" href="/completedPro" target="_blank"> Completed Projects</a>
+	  </li>
+    </ul> 
+  </div>
+   </div>
+</nav>  
+</section>
+
+<section id="openings">
+<div class="container">
+ 
+    
+</div>                                            <!--Warning section when no input is given-->
+
+
+</section>
+ <br>
+ <section id="openings-section">                        <!--Job openings section start here-->
+ 
+<div class="container-fluid " id="job-list">             
+  
+ 
+</div>
+ 
+</section>                        <!--Opening section ends here-->
+ 
+<footer id="footer">
+ <div class="container">
+  <div class="row">
+  <div class="col-md-6 col-xs-12 col-sm-12">
+     <p class="lead"> © Company Name</p>
+  </div>
+  <div class="col-md-6 col-xs-12 col-sm-12">
+   <h3>  <u>Follow us</u></h3>
+	   <div class="row">
+	     <a href=""> <img src="images/facebook.png" alt="" class="img-thumbnail"></a>
+		 <a href=""> <img src="images/instagram.png" alt="" class="img-thumbnail"></a>
+		  <a href=""> <img src="images/linkedin.png" alt="" class="img-thumbnail"></a>
+		 <a href="">  <img src="images/twitter.png" alt="" class="img-thumbnail"></a>
+	    
+	   </div>
+  </div>
+  
+  </div>
+ 
+ </div>
+ </footer>
+ <div class="modal" id="applyModal" tabindex="-1" role="dialog" aria-labelledby="applyModallabel" aria-hidden="false">  <!--Modal which pops up on clking the apply function-->
+   <div class="modal-dialog" role="document">
+   <div class="modal-content">
+	 <div class="modal-body">
+	   <form action="/apply" method="POST" enctype="multipart/form-data">
+	      <div class="form-group">
+		  <input type="email" class="form-control" aria-describedby="email Help" placeholder="Email Id *" name="email" required> <!--Input field for email-->
+		  </div>
+		   <div class="form-group">
+		  <input type="text" class="form-control" aria-describedby="Name Help" placeholder="Name *" name="name" required>   <!--Input field for name-->
+		   </div>
+		    <div class="form-group">
+		  <input type="phone" class="form-control" aria-describedby="Phone Help" placeholder="Phone *" name="phone" required> <!--Input field for phone-->
+		   </div>
+		    <div class="form-group">
+		  <input type="file" class="form-control" aria-describedby="Resume Help" placeholder="Resume" name="resume" required>  <!--Input for selcting resume-->
+		   </div>
+		     <div class="form-group">
+		  <input type="text" class="form-control in-position " aria-describedby="email Help"  name="position" readonly> <!--Displaying the position applied-->
+		   </div>
+		   <div class="form-group text-center">
+		      <button type="button" class="btn btn-primary" data-dismiss="modal">Cancel</button> <!--the cancel button-->
+			  <button type="sumbit" class="btn btn-primary">Apply</button>  <!--the apply button-->
+	       </div>
+        </form>
+         
+   </div>
+   </div>
+ </div>
+ 
+ 
+ <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+    
+	<script>
+     $(document).ready(function(){                                               <!--Jquery function to display the position applied-->
+	   $('#applyModal').on('show.bs.modal',function(e){
+	      var _button=$(e.relatedTarget);
+		  
+		  var info=_button.parents(".job-list");
+		  
+		  var position =info.find(".alert-heading").text();
+		  
+		  $(this).find(".in-position").val(position);
+	   });
+	 });
+    </script>
+	
+
+	</script>
+	
+	</html>

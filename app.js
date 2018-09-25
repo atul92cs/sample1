@@ -9,6 +9,7 @@ var port =process.env.port||8080;
 var passport=require('passport');
 var mongoose=require('mongoose');
 var path=require('path');
+var route=require('./routes');
 const app=express();
 var db =mongoose.connect('mongodb://atul_92:savita92@ds259912.mlab.com:59912/sample_website_db',{ useNewUrlParser: true });
 app.set('views',__dirname+'/views');
@@ -31,6 +32,9 @@ function ensureAuthenticated(req,res,next){
 		res.redirect('/login');
 	}
 }
+app.get('/',route.home);
+app.get('/completedPro',route.completedProjects);
+app.get('/careers',route.careers);
 app.listen(port,function(){                                /* starting the app*/
     console.log('server started on '+ port);
 });

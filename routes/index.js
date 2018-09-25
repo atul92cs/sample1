@@ -13,9 +13,10 @@ exports.home=function(req,res)
 };
 exports.careers=function(req,res)
 {
-   res.render('career');
+   res.render('careers');
 };
-exports.contact=function(req,res)
+
+exports.completedProjects=function(req,res)
 {
-    res.render('contact');
+	res.render('completedpro');
 };
