@@ -11,14 +11,14 @@ router.post('/job/add',function(req,res){
     var skills=req.body.skill;
     var location=req.body.location;
     var description=req.body.description;
-    var record=new Job(
+    var record=new Job({
        id:new mongoose.Types.ObjectId(),
         position:postion,
         location:location,
         experience:experience,
         skills:skills,
         description:description
-    );
+    });
     record.save().then(result=>{
         res.send('Success');
     }).catch(err=>{
@@ -45,17 +45,17 @@ router.post('/job/update',function(req,res){
     });
 });
 router.post('job/apply',function(req,res){
-    var name=req.body.name,
-    var contact=req.body.contact,
-    var email=req.body.email,
-    var position=req.body.postion,
-    var record=new Application(
+    var name=req.body.name;
+    var contact=req.body.contact;
+    var email=req.body.email;
+    var position=req.body.postion;
+    var record=new Application({
       id:new mongoose.Types.ObjectId(),
       name:name,
       email:email,
       phone:contact,
       position:position
-    );
+    });
     record.save().then(result=>{
         res.send('Success');
     }).catch(err=>{
@@ -89,14 +89,14 @@ router.post('/enquire',function(req,res){
     var contact=req.body.contact;
     var email=req.body.email;
     var enquiry=req.body.eunquiry;
-    var record= new Enquiry(
+    var record= new Enquiry({
       id:new mongoose.Types.ObjectId(),
       name:name,
       phone:contact,
       email:email,
       enquiry:enquiry
         
-    );
+    });
     record.save().then(result=>
                        {
         res.send('Success');

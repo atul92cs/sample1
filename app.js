@@ -10,6 +10,7 @@ var passport=require('passport');
 var mongoose=require('mongoose');
 var path=require('path');
 var route=require('./routes');
+var user=require('./routes/userFunction');
 const app=express();
 var db =mongoose.connect('mongodb://atul_92:savita92@ds259912.mlab.com:59912/sample_website_db',{ useNewUrlParser: true });
 app.set('views',__dirname+'/views');
@@ -35,6 +36,9 @@ function ensureAuthenticated(req,res,next){
 app.get('/',route.home);
 app.get('/completedPro',route.completedProjects);
 app.get('/careers',route.careers);
+app.get('/login',route.login);
+app.get('/register',route.register);
+app.post('/job/add',user);
 app.listen(port,function(){                                /* starting the app*/
     console.log('server started on '+ port);
 });

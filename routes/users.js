@@ -10,6 +10,13 @@ router.post('/register',function(req,res){
 	var username=req.body.username;
 	var email=req.body.email;
 	var password=req.body.password;
+    var confirmPassword=req.body.conpassword;
+    if(password!==confirmPassword)
+        {
+          res.send('Password do not match');            
+        }
+    else
+       {
 	var record=new User()
 	record.username=username;
 	record.email=email;
@@ -17,9 +24,9 @@ router.post('/register',function(req,res){
 	record.save(function(err,user){
 		if(err)
 		{
-			var msg = err;
 			
-			res.redirect('/register',);
+			
+			res.redirect('/register');
 			
 		}
 		else
@@ -28,8 +35,8 @@ router.post('/register',function(req,res){
 			res.redirect('/success');
 		}
 		
-	})
-	
+	});
+}
 });
  passport.serializeUser(function (user, done) {
         done(null, user);
