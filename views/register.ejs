@@ -7,45 +7,32 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
-	<link rel="stylesheet" href="/css/admin.css">
+    <link rel="stylesheet" href="/css/admin.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
 	
-    <title>Datadock</title>
+    <title>Datadock </title>
   </head>
   <body>
   <section id="main">
-    <div class="container">
-     <div class="jumbotron">
-     <div class="row">
-    <div class="col-md-4 col-sm-12 col-xs-12">
-    <form method="POST" action="/register">
-        <div class="form-group">
-            <label for="InputEmail">Email</label>
-            <input type="email" class="form-control" id="email" name="email" aria-describedby="email help" placeholder="Enter Email" >
-        </div>
-        <div class="form-group">
-            <label for="Input password">Password</label>
-            <input type="password" class="form-control" id="password" name="password" aria-describedby="Password help" placeholder="Enter password">
-        </div>
-        <div class="form-group">
-            <label for="Input password">Confirm Password</label>
-            <input type="password" class="form-control" id="password" name="conpassword" aria-describedby="Password help" placeholder="Enter Confirm password">
-        </div>
-        <div class="form-group text-center">
-            <button type="submit" class="btn btn-primary">Register</button>
-        </div>
-    </form>
-   </div>
-    <div class="col-md-4 col-sm-12 col-xs-12">
-        <h1>Control Panel</h1>
-         	<h4> &#x24B8;Company name</h4>
-    </div>
-   </div>
-   </div>
-   </div>
+     <form action ="/register" method="POST">
+	  <div class="form-group">
+		 <input type="email" class="form-control" name="email" id="position" placeholder="Email">
+	  </div>
+	  <div class="form-group">
+	   <input type="text" class="form-control" name="username" id="position" placeholder="User id">
+	  </div>
+	  <div class="form-group">
+		 <input type="password" class="form-control" name="password" id="position" placeholder="Password">
+	  </div>
+	  <div class="form-group">
+	    <button type="sumbit" class="btn btn-primary">Apply</button>
+	  </div>
+	 </form>
+	 
   </section>
   </body>
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
-</html>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+    <script src="/js/flash-client.js"></script>
+  </html>

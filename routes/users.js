@@ -7,36 +7,29 @@ var bcrypt=require('bcrypt-nodejs');
 var router=express.Router();
 router.post('/register',function(req,res){
 	
-	var username=req.body.username;
+	
 	var email=req.body.email;
 	var password=req.body.password;
-    var confirmPassword=req.body.conpassword;
-    if(password!==confirmPassword)
-        {
-          res.send('Password do not match');            
-        }
-    else
-       {
-	var record=new User()
-	record.username=username;
+	var record=new User();
+	
 	record.email=email;
 	record.password=record.hashPassword(password);
 	record.save(function(err,user){
 		if(err)
 		{
+			var msg = err;
 			
-			
-			res.redirect('/register');
+			res.redirect('/register',);
 			
 		}
 		else
 		{
 			
-			res.redirect('/success');
+			res.send('success');
 		}
 		
-	});
-}
+	})
+	
 });
  passport.serializeUser(function (user, done) {
         done(null, user);
@@ -44,8 +37,8 @@ router.post('/register',function(req,res){
     passport.deserializeUser(function (user, done) {
         done(null, user);
     })
-passport.use(new localStrategy(function(username,password,done){
-	User.findOne({username:username},function(err,doc){
+passport.use(new localStrategy(function(email,password,done){
+	User.findOne({email:email},function(err,doc){
 		if(err)
 		{
 			done(err)
@@ -57,7 +50,7 @@ passport.use(new localStrategy(function(username,password,done){
 				 if(valid)
 				 {
 					 done(null,{
-						 username:doc.username,
+						 email:doc.email
 						 
 					 })
 				 }else
@@ -72,7 +65,14 @@ passport.use(new localStrategy(function(username,password,done){
 
 		})
 }))
-router.post('/login',passport.authenticate('local',{successRedirect:'/success',failureRedirect: '/login',failureFlash: false}),function(req,res){
+
+router.post('/login',passport.authenticate('local',{successRedirect:'/admin',failureRedirect: '/',failureFlash: false}),function(req,res){
 	res.send('login successful');
+});
+router.post('/update',function(req,res){
+	
+});
+router.delete('/delete/:id',function(req,res){
+	
 });
 module.exports=router;
